@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICS</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        body, body * {
+            font-family: "Roboto", sans-serif;
+        }
+        p {
+            font-size: 13px;
+            font-weight: bold;
+        }
+        .col-form-label {
+            font-size: 13px;
+            font-weight: bold;
+        }
+        .form-control {
+            font-size: 13px;
+            font-weight: bold;
+            background-color: none;
+        }
+        input[type="text"], input[type="number"] {
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="capture-area">
+        <div class="container mt-5">
+            <form id="form">
+                <div class="form-row">
+                    <div class="col-md-3">
+                        <label for="firstName" class="col-form-label">Name</label>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" id="firstName">
+                    </div>
+                    <div class="col-md-3">
+                         <label for="number" class="col-form-label">Mobile</label>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" id="number">
+                    </div>
+                </div>
+                <div class="form-row mt-3">
+                    <div class="col-md-3">
+                        <label for="externalId" class="col-form-label">Externalid</label>
+                    </div>
+                    <div class="col-md-3">
+                        <p id="externalId">7487364632842</p>
+                    </div>
+                </div>
+                <div class="form-row mt-3">
+                    <div class="col-md-3">
+                        <h6>Communication Channel</h6>
+                    </div>
+                </div>
+                <div class="form-row mt-3">
+                    <div class="col-md-3">
+                       <label for="mobileChannel" class="col-form-label">Mobile</label>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" id="mobileChannel">
+                    </div>
+                </div>
+                <div class="form-row mt-3">
+                    <div class="col-md-3">
+                        <h6>Custom Fields</h6>
+                    </div>
+                </div>
+                <div class="form-row mt-3">
+                    <div class="col-md-3">
+                        <p>Card Active status</p>
+                    </div>
+                    <div class="col-md-3">
+                        <p id="cardStatus">Active</p>
+                    </div>
+                    <div class="col-md-3">
+                        <p>Age Group</p>
+                    </div>
+                    <div class="col-md-3">
+                        <p id="ageGroup">NA</p>
+                    </div>
+                </div>
+                <div class="form-row mt-3">
+                    <div class="col-md-3">
+                        <p>Birthday</p>
+                    </div>
+                    <div class="col-md-3">
+                        <p id="birthday">13-08-1998</p>
+                    </div>
+                    <div class="col-md-3">
+                        <p>VIP Card Expiry Date</p>
+                    </div>
+                    <div class="col-md-3">
+                        <p id="vipExpiry">13-03-2025</p>
+                    </div>
+                </div>
+                <div class="form-row mt-3">
+                    <div class="col-md-3">
+                        <p>Active Point On Date</p>
+                    </div>
+                    <div class="col-md-3">
+                        <p id="activePoints">522</p>
+                    </div>
+                    <div class="col-md-3">
+                        <p>Current Loyalty Tier</p>
+                    </div>
+                    <div class="col-md-3">
+                        <p id="loyaltyTier">NA</p>
+                    </div>
+                </div>
+                <div class="form-row mt-3">
+                    <div class="col-md-3">
+                        <p>Gender</p>
+                    </div>
+                    <div class="col-md-3">
+                        <p id="gender">M</p>
+                    </div>
+                    <div class="col-md-3">
+                        <p>Joined Loyalty Tier</p>
+                    </div>
+                    <div class="col-md-3">
+                        <p id="joinedLoyalty">NA</p>
+                    </div>
+                </div>
+                <div class="form-row mt-3">
+                    <div class="col-md-3">
+                        <label for="extendedField" class="col-form-label">Extended Field</label>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" id="extendedField">
+                    </div>
+                </div>
+                <div class="form-row mt-3">
+                    <div class="col-md-3">
+                        <label for="dob" class="col-form-label">Dob</label>
+                    </div>
+                    <div class="col-md-3">
+                        <p id="dob">24-02-1998</p>
+                    </div>
+                </div>
+                <div class="form-row mt-3">
+                    <div class="col-md-6">
+                        <h6>CRM Registration Information</h6>
+                    </div>
+                </div>
+                <div class="form-row mt-3">
+                    <div class="col-md-3">
+                        <label for="createdOn" class="col-form-label">Created On</label>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" id="createdOn">
+                    </div>
+                    <div class="col-md-3">
+                       <label for="createdBy" class="col-form-label">Created By</label>
+                    </div>
+                    <div class="col-md-3">
+                       <input type="text" class="form-control" id="createdBy">
+                    </div>
+                </div>
+                <div class="form-row mt-3">
+                    <div class="col-md-3">
+                        <label for="modifiedOn" class="col-form-label">Modified On</label>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" id="modifiedOn">
+                    </div>
+                    <div class="col-md-3">
+                       <label for="modifiedBy" class="col-form-label">Modified By</label>
+                    </div>
+                    <div class="col-md-3">
+                       <input type="text" class="form-control" id="modifiedBy">
+                    </div>
+                </div>
+                <div class="form-row mt-3">
+                    <div class="col-md-3">
+                        <p>Created From Source</p>
+                    </div>
+                    <div class="col-md-3">
+                        <p id="createdFromSource">instore</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="form-row mt-3">
+        <div class="col-md-3"></div>
+        <div class="col-md-3"></div>
+        <div class="col-md-3"></div>
+        <div class="col-md-3">
+           <button id="capture-button" class="btn btn-primary">Take Screenshot</button>
+        </div>
+    </div>
+
+    <br/><br/><br/><br/>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        const dataSets = [
+            {
+                name: "Pramod",                  //name
+                mobile: "9008595909",            //mobile no
+                externalId: "7487364632842",
+                mobileChannel: "9008595909",     //mobile no
+                cardStatus: "Active",
+                ageGroup: "Adult",
+                birthday: "13-08-1998",
+                vipExpiry: "13-03-2025",
+                activePoints: "522",
+                loyaltyTier: "Gold",
+                gender: "M",
+                joinedLoyalty: "2020-01-01",
+                extendedField: "9008595909",     //mobile no
+                dob: "24-02-1998",
+                createdOn: "2024-05-01 16:20",                   //date
+                createdBy: "parcir rj.jaipur.20015792.1",  //SID
+                modifiedOn: "2024-10-02 20:45",                    //date
+                modifiedBy: "parcir rj.jaipur.20015792.1r", //SID
+                createdFromSource: "instore"
+            }, 
+            {
+                name: "Pramod",                  //name
+                mobile: "9880082711",            //mobile no
+                externalId: "7487364632842",
+                mobileChannel: "9880082711",     //mobile no
+                cardStatus: "Active",
+                ageGroup: "Adult",
+                birthday: "13-08-1998",
+                vipExpiry: "13-03-2025",
+                activePoints: "522",
+                loyaltyTier: "Gold",
+                gender: "M",
+                joinedLoyalty: "2020-01-01",
+                extendedField: "9880082711",     //mobile no
+                dob: "24-02-1998",
+                createdOn: "2024-05-01 16:20",                   //date
+                createdBy: "parcir rj.jaipur.20015792.1",  //SID
+                modifiedOn: "2024-10-02 20:45",                    //date
+                modifiedBy: "parcir rj.jaipur.20015792.1r", //SID
+                createdFromSource: "instore"
+            }
+        ];
+
+        function fillForm(data) {
+            document.getElementById('firstName').value = data.name;
+            document.getElementById('number').value = data.mobile;
+            document.getElementById('externalId').innerText = data.externalId;
+            document.getElementById('mobileChannel').value = data.mobileChannel;
+            document.getElementById('cardStatus').innerText = data.cardStatus;
+            document.getElementById('ageGroup').innerText = data.ageGroup;
+            document.getElementById('birthday').innerText = data.birthday;
+            document.getElementById('vipExpiry').innerText = data.vipExpiry;
+            document.getElementById('activePoints').innerText = data.activePoints;
+            document.getElementById('loyaltyTier').innerText = data.loyaltyTier;
+            document.getElementById('gender').innerText = data.gender;
+            document.getElementById('joinedLoyalty').innerText = data.joinedLoyalty;
+            document.getElementById('extendedField').value = data.extendedField;
+            document.getElementById('dob').innerText = data.dob;
+            document.getElementById('createdOn').value = data.createdOn;
+            document.getElementById('createdBy').value = data.createdBy;
+            document.getElementById('modifiedOn').value = data.modifiedOn;
+            document.getElementById('modifiedBy').value = data.modifiedBy;
+            document.getElementById('createdFromSource').innerText = data.createdFromSource;
+        }
+
+        async function captureScreenshot(data, index) {
+            fillForm(data);
+            await new Promise(resolve => setTimeout(resolve, 500)); // Wait for the form to be filled
+            const canvas = await html2canvas(document.getElementById('capture-area'));
+            const img = canvas.toDataURL();
+            const link = document.createElement('a');
+            link.href = img;
+            link.download = data.mobile + '.png';
+            link.click();
+        }
+
+        document.getElementById('capture-button').addEventListener('click', async function() {
+            for (let index = 0; index < dataSets.length; index++) {
+                await captureScreenshot(dataSets[index], index);
+            }
+        });
+    </script>
+</body>
+</html>
