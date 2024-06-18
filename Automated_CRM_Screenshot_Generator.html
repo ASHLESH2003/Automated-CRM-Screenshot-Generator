@@ -1,35 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ICS</title>
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
     <style>
-        body, body * {
+        body,
+        body * {
             font-family: "Roboto", sans-serif;
         }
+
         p {
             font-size: 13px;
             font-weight: bold;
         }
+
         .col-form-label {
             font-size: 13px;
             font-weight: bold;
         }
+
         .form-control {
             font-size: 13px;
             font-weight: bold;
             background-color: none;
         }
-        input[type="text"], input[type="number"] {
+
+        input[type="text"],
+        input[type="number"] {
             border: none;
             box-shadow: none;
         }
     </style>
 </head>
+
 <body>
     <div id="capture-area">
         <div class="container mt-5">
@@ -42,7 +53,7 @@
                         <input type="text" class="form-control" id="firstName">
                     </div>
                     <div class="col-md-3">
-                         <label for="number" class="col-form-label">Mobile</label>
+                        <label for="number" class="col-form-label">Mobile</label>
                     </div>
                     <div class="col-md-3">
                         <input type="text" class="form-control" id="number">
@@ -63,7 +74,7 @@
                 </div>
                 <div class="form-row mt-3">
                     <div class="col-md-3">
-                       <label for="mobileChannel" class="col-form-label">Mobile</label>
+                        <label for="mobileChannel" class="col-form-label">Mobile</label>
                     </div>
                     <div class="col-md-3">
                         <input type="text" class="form-control" id="mobileChannel">
@@ -159,10 +170,10 @@
                         <input type="text" class="form-control" id="createdOn">
                     </div>
                     <div class="col-md-3">
-                       <label for="createdBy" class="col-form-label">Created By</label>
+                        <label for="createdBy" class="col-form-label">Created By</label>
                     </div>
                     <div class="col-md-3">
-                       <input type="text" class="form-control" id="createdBy">
+                        <input type="text" class="form-control" id="createdBy">
                     </div>
                 </div>
                 <div class="form-row mt-3">
@@ -173,10 +184,10 @@
                         <input type="text" class="form-control" id="modifiedOn">
                     </div>
                     <div class="col-md-3">
-                       <label for="modifiedBy" class="col-form-label">Modified By</label>
+                        <label for="modifiedBy" class="col-form-label">Modified By</label>
                     </div>
                     <div class="col-md-3">
-                       <input type="text" class="form-control" id="modifiedBy">
+                        <input type="text" class="form-control" id="modifiedBy">
                     </div>
                 </div>
                 <div class="form-row mt-3">
@@ -191,66 +202,120 @@
         </div>
     </div>
     <div class="form-row mt-3">
-        <div class="col-md-3"></div>
-        <div class="col-md-3"></div>
-        <div class="col-md-3"></div>
         <div class="col-md-3">
-           <button id="capture-button" class="btn btn-primary">Take Screenshot</button>
+            <input type="file" id="file-input" accept=".csv,.xlsx,.xls" />
+        </div>
+        <div class="col-md-3">
+            <button id="capture-button" class="btn btn-primary">Take Screenshot</button>
         </div>
     </div>
 
-    <br/><br/><br/><br/>
+
+
+    <h6>Choose only Excel and CSV files with M capital in the Mobile column in the file.</h6>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     <script>
-        const dataSets = [
-            {
-                name: "Pramod",                  //name
-                mobile: "9008595909",            //mobile no
-                externalId: "7487364632842",
-                mobileChannel: "9008595909",     //mobile no
-                cardStatus: "Active",
-                ageGroup: "Adult",
-                birthday: "13-08-1998",
-                vipExpiry: "13-03-2025",
-                activePoints: "522",
-                loyaltyTier: "Gold",
-                gender: "M",
-                joinedLoyalty: "2020-01-01",
-                extendedField: "9008595909",     //mobile no
-                dob: "24-02-1998",
-                createdOn: "2024-05-01 16:20",                   //date
-                createdBy: "parcir rj.jaipur.20015792.1",  //SID
-                modifiedOn: "2024-10-02 20:45",                    //date
-                modifiedBy: "parcir rj.jaipur.20015792.1r", //SID
-                createdFromSource: "instore"
-            }, 
-            {
-                name: "Pramod",                  //name
-                mobile: "9880082711",            //mobile no
-                externalId: "7487364632842",
-                mobileChannel: "9880082711",     //mobile no
-                cardStatus: "Active",
-                ageGroup: "Adult",
-                birthday: "13-08-1998",
-                vipExpiry: "13-03-2025",
-                activePoints: "522",
-                loyaltyTier: "Gold",
-                gender: "M",
-                joinedLoyalty: "2020-01-01",
-                extendedField: "9880082711",     //mobile no
-                dob: "24-02-1998",
-                createdOn: "2024-05-01 16:20",                   //date
-                createdBy: "parcir rj.jaipur.20015792.1",  //SID
-                modifiedOn: "2024-10-02 20:45",                    //date
-                modifiedBy: "parcir rj.jaipur.20015792.1r", //SID
-                createdFromSource: "instore"
+        document.getElementById('file-input').addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const data = e.target.result;
+                if (file.name.endsWith('.csv')) {
+                    processCSV(data);
+                } else if (file.name.endsWith('.xlsx') || file.name.endsWith('.xls')) {
+                    processExcel(data);
+                }
+            };
+            if (file.name.endsWith('.csv')) {
+                reader.readAsText(file);
+            } else if (file.name.endsWith('.xlsx') || file.name.endsWith('.xls')) {
+                reader.readAsBinaryString(file);
             }
-        ];
+        });
+
+        function processCSV(data) {
+            return new Promise((resolve, reject) => {
+                Papa.parse(data, {
+                    header: true,
+                    complete: function (results) {
+                        const mobileNumbers = results.data.map(row => row.Mobile).filter(Boolean);
+                        resolve(mobileNumbers);
+                    },
+                    error: reject
+                });
+            }).then(processMobileNumbers);
+        }
+
+        function processExcel(data) {
+            return new Promise((resolve, reject) => {
+                const workbook = XLSX.read(data, { type: 'binary' });
+                const firstSheet = workbook.SheetNames[0];
+                const worksheet = workbook.Sheets[firstSheet];
+                const jsonData = XLSX.utils.sheet_to_json(worksheet);
+                const mobileNumbers = jsonData.map(row => row.Mobile).filter(Boolean);
+                resolve(mobileNumbers);
+            }).then(processMobileNumbers);
+        }
+
+        function processMobileNumbers(mobileNumbers) {
+            let index = 0;
+            const zip = new JSZip();
+
+            const processNextMobileNumber = async () => {
+                if (index < mobileNumbers.length) {
+                    const mobile = mobileNumbers[index];
+                    const filledData = fillFormWithMobile(mobile);
+                    const screenshotData = await captureScreenshot(filledData);
+                    zip.file(mobile + '.png', screenshotData, { base64: true });
+                    index++;
+                    setTimeout(processNextMobileNumber, 1000); // Wait for 1 second before processing the next mobile number
+                } else {
+                    // After all screenshots are captured, generate the zip file
+                    zip.generateAsync({ type: "blob" })
+                        .then(function (content) {
+                            const link = document.createElement('a');
+                            link.href = URL.createObjectURL(content);
+                            link.download = 'ucc.zip';
+                            link.click();
+                        });
+                }
+            };
+            processNextMobileNumber(); // Start processing with the first mobile number
+        }
+
+        function fillFormWithMobile(mobile) {
+            const data = {
+                name: "Pramod",
+                mobile: mobile,
+                externalId: "7487364632842",
+                mobileChannel: mobile,
+                cardStatus: "Active",
+                ageGroup: "Adult",
+                birthday: "13-08-1998",
+                vipExpiry: "13-03-2025",
+                activePoints: "522",
+                loyaltyTier: "Gold",
+                gender: "M",
+                joinedLoyalty: "2020-01-01",
+                extendedField: mobile,
+                dob: "24-02-1998",
+                createdOn: "2024-06-01 16:20",
+                createdBy: "parcir rj.jaipur.20015792.1",
+                modifiedOn: "2024-10-02 20:45",
+                modifiedBy: "parcir rj.jaipur.20015792.1r",
+                createdFromSource: "instore"
+            };
+            fillForm(data);
+            return data;
+        }
 
         function fillForm(data) {
             document.getElementById('firstName').value = data.name;
@@ -274,22 +339,21 @@
             document.getElementById('createdFromSource').innerText = data.createdFromSource;
         }
 
-        async function captureScreenshot(data, index) {
-            fillForm(data);
+        async function captureScreenshot(data) {
             await new Promise(resolve => setTimeout(resolve, 500)); // Wait for the form to be filled
             const canvas = await html2canvas(document.getElementById('capture-area'));
-            const img = canvas.toDataURL();
-            const link = document.createElement('a');
-            link.href = img;
-            link.download = data.mobile + '.png';
-            link.click();
+            return canvas.toDataURL().split(',')[1]; // Return base64 part of the image
         }
 
-        document.getElementById('capture-button').addEventListener('click', async function() {
-            for (let index = 0; index < dataSets.length; index++) {
-                await captureScreenshot(dataSets[index], index);
+        document.getElementById('capture-button').addEventListener('click', async function () {
+            const fileInput = document.getElementById('file-input');
+            if (fileInput.files.length === 0) {
+                alert('Please select a file first.');
+                return;
             }
+            // The file processing and screenshot capturing will be handled by the file input change event
         });
     </script>
 </body>
+
 </html>
